@@ -1,4 +1,4 @@
-﻿using System.Text;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -70,6 +70,19 @@ namespace Notepad
         public void About_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Программа: Разработка блокнота\n\nРазработчик: Сухомяткина Ксения Игоревна\nГруппа: ИСП-34", "О Программе", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+        //Изменение шрифта
+        public void ChangeFont_Click(object sender, RoutedEventArgs e)
+        {
+            notepad.ChangeFont("Arial", 14);
+        }
+        public void ChangeTextColor_Click(object sender, RoutedEventArgs e)
+        {
+            notepad.ChangeTextColor(Colors.Red);
+        }
+        public void UpdateTitle()
+        {
+            this.Title = notepad.NameFile == "" ? "Безымянный" : notepad.NameFile;
         }
     }
 }
