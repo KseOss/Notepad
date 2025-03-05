@@ -1,4 +1,4 @@
-﻿<Window x:Class="Notepad.MainWindow"
+<Window x:Class="Notepad.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -22,12 +22,16 @@
                 <MenuItem Header="Вставить" Click="Paste_Click"/>
                 <MenuItem Header="Отменить" Click="Undo_Click"/>
             </MenuItem>
+            <MenuItem Header="Формат">
+                <MenuItem Header="Изменить шрифт" Click="ChangeFont_Click"/>
+                <MenuItem Header="Изменить цвет текста" Click="ChangeTextColor_Click"/>
+            </MenuItem>
             <MenuItem Header="Справка">
                 <MenuItem Header="О программе" Click="About_Click"/>
             </MenuItem>
         </Menu>
 
-        <RichTextBox Name="fieldEdit" Margin="10,35,10,10" Background="White" BorderBrush="#ffd3d3d3" BorderThickness="1">
+        <RichTextBox Name="fieldEdit" Margin="10,35,10,10" Background="White">
             <RichTextBox.ContextMenu>
                 <ContextMenu>
                     <MenuItem Header="Копировать" Click="Copy_Click"/>
