@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System;
 using Microsoft.Win32; 
 using System.IO; 
-using System.Security.Policy;
 using System.Windows; 
 using System.Windows.Controls; 
 using System.Windows.Documents; 
@@ -123,6 +118,17 @@ namespace Notepad
         public void Undo()
         {
             fieldEdit.Undo();//Отменяем последнее действие 
+        }
+        //Метод изменения шрифта
+        public void ChangeFont(string fontName, double fontSize)
+        {
+            fieldEdit.Selection.ApplyPropertyValue(TextElement.FontFamilyProperty, fontName);
+            fieldEdit.Selection.ApplyPropertyValue(TextElement.FontSizeProperty, fontSize);
+        }
+        //Метод для изменения цвета текста
+        public void ChangeTextColor(System.Windows.Media.Color color)
+        {
+            fieldEdit.Selection.ApplyPropertyValue(TextElement.ForegroundProperty, color);
         }
     }
 }
